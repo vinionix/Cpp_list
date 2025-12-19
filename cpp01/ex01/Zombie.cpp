@@ -1,5 +1,9 @@
 #include "Zombie.hpp"
 
+Zombie::Zombie( void ){}
+
+Zombie::~Zombie( void ){}
+
 std::string& Zombie::get_name()
 {
 	return (name);

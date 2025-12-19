@@ -7,7 +7,6 @@ FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.o:
 	$(COMP) $(FLAGS) -c $< -o $@
-
 all : $(NAME_PROG)
 
 $(NAME_PROG): $(NAME_OBJS)
