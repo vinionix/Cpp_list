@@ -2,25 +2,25 @@
 
 void	Harl::debug( void )
 {
-	std::cout << "Eu amo ter bacon extra para o meu hambúrguer 7XL-duplo-queijo-triplopicles-ketchup-especial. Eu realmente amo" << std::endl;
+	std::cout << "I love having extra bacon on my 7XL-double-cheese-triple-pickle-ketchup-special burger. I really love it." << std::endl;
 }
 
 void	Harl::info( void )
 {
-	std::cout << "Eu não acredito que adicionar bacon extra custa mais dinheiro. Vocês não colocaram bacon suficiente no meu hambúrguer! Se vocês tivessem colocado, eu não estaria pedindo por mais!" << std::endl;
+	std::cout << "I can't believe adding extra bacon costs more money. You didn't put enough bacon on my burger! If you had, I wouldn't be asking for more!" << std::endl;
 }
 void	Harl::error( void )
 {
-	std::cout << "Eu acho que mereço ter bacon extra de graça. Eu venho aqui há anos, enquanto você começou a trabalhar aqui apenas no mês passado." << std::endl;
+	std::cout << "I think I deserve extra bacon for free. I've been coming here for years, while you only started working here last month." << std::endl;
 }
 
 void	Harl::warning( void )
 {
-	std::cout << "Isto é inaceitável! Eu quero falar com o gerente agora." << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 void	Harl::indexError( void )
 {
-	std::cout << "Opção invalida." << std::endl;
+	std::cout << "Invalid option." << std::endl;
 }
 
 void	Harl::complain( std::string level )

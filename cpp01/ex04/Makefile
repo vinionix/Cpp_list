@@ -4,7 +4,7 @@ NAME_OBJS = $(NAME_FILE:.cpp=.o)
 COMP = g++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-%.o: %.cpp
+.cpp.o:
 	$(COMP) $(FLAGS) -c $< -o $@
 
 all : $(NAME_PROG)
