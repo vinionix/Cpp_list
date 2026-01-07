@@ -10,7 +10,7 @@ int main( void ) {
 	std::cout << "Increment operator/pos: " << a++ << std::endl;
 	std::cout << "Verify: " << a  << std::endl << std::endl;
 
-	std::cout << "Defalt builder: " << c << std::endl;
+	std::cout << "Builder: " << c << std::endl;
 	std::cout << "Decrease operator/pre: " << --c << std::endl;
 	std::cout << "Verify: " << c << std::endl;
 	std::cout << "Decrease operator/pos: " << c-- << std::endl;
