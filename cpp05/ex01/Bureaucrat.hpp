@@ -1,7 +1,9 @@
 #pragma once
 
-#include <iostream>
+# include <iostream>
+# include "Form.hpp"
 
+class Form;
 class Bureaucrat{
 	private:
 		const std::string	_name;
@@ -14,6 +16,7 @@ class Bureaucrat{
 		int getGrade( void ) const;
 		void increase( void );
 		void decrement( void );
+		void signForm( Form& form );
 		
 		class GradeTooHighException : public std::exception{
 			public:

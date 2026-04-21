@@ -25,13 +25,13 @@ int Bureaucrat::getGrade( void ) const{
 }
 
 void Bureaucrat::increase(){
-	if (this->_grade == 150)
+	if (this->_grade >= 150)
 		return;
 	this->_grade++;
 }
 
 void Bureaucrat::decrement(){
-	if (this->_grade == 1)
+	if (this->_grade <= 1)
 		return;
 	this->_grade--;
 }

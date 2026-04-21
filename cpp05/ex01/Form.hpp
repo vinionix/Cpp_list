@@ -1,6 +1,9 @@
 #pragma once
-# include <iostream>
 
+# include <iostream>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 class Form{
     
     private:
@@ -13,11 +16,12 @@ class Form{
         Form(const std::string name, int requiredSignGrade, int requiredExecGrade);
         Form(const Form& copy);
         Form&               operator=(const Form& copy);
-        std::string         getName();
-        bool                getSigned();
-        int           getRequiredSignGrade();
-        int           getRequiredExecGrade();
-        
+        std::string         getName( void );
+        bool                getSigned( void );
+        int                 getRequiredSignGrade( void );
+        int                 getRequiredExecGrade( void );
+        void                beSigned(const Bureaucrat& bureaucrat);
+
         class GradeTooHighException : public std::exception{
             public:
                 virtual const char* what() const throw();
@@ -30,4 +34,5 @@ class Form{
 
         ~Form();
 };
+
 std::ostream& operator<<(std::ostream& os, const Form& obj);

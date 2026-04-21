@@ -4,6 +4,10 @@ int main( void ){
 	try {
 		Bureaucrat Vinicius("Vinicius", 1);
 		std::cout << Vinicius;
+		Vinicius.decrement();
+		std::cout << Vinicius;
+		Vinicius.increase();
+		std::cout << Vinicius;
 	}
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;
@@ -24,6 +28,4 @@ int main( void ){
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
-	
-	
 }

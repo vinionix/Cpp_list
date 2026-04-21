@@ -2,28 +2,18 @@
 
 int main( void ){
 	try {
+		Form textForm("TextForm", 3, 4);
 		Bureaucrat Vinicius("Vinicius", 1);
-		std::cout << Vinicius;
-		Vinicius.decrement();
-		std::cout << Vinicius;
-		Vinicius.increase();
-		std::cout << Vinicius;
+		Vinicius.signForm(textForm);
 	}
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 
 	try {
-		Bureaucrat Adyvan("Adyvan", 0);
-		std::cout << Adyvan;
-	}
-	catch(const std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	try {
-		Bureaucrat Luiza("Luiza", 151);
-		std::cout << Luiza;
+		Bureaucrat Adyvan("Adyvan", 5);
+		Form textForm2("TextForm2", 1, 1);
+		Adyvan.signForm(textForm2);	
 	}
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;
