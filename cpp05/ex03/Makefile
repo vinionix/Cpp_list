@@ -1,7 +1,7 @@
 NAME_PROG = Bureaucrat
-NAME_FILE = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+NAME_FILE = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 NAME_OBJS = $(NAME_FILE:.cpp=.o)
-COMP = g++
+COMP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
 .cpp.o:
