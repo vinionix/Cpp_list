@@ -17,7 +17,7 @@ AForm* presidentialfun(std::string target) {
 }
 
 const char* Intern::FormErrorException::what() const throw(){
-	return ("Grade too high!");
+	return ("This form does not exist!");
 }
 
 AForm* Intern::makeForm(std::string formName, std::string targetName){
@@ -28,10 +28,16 @@ AForm* Intern::makeForm(std::string formName, std::string targetName){
         &presidentialfun
     };
 
-    for (int i = 0; i < 3; i++){
-        if (strcmp(seachForms[i], formName.c_str())){
-            return (form[i](targetName));
+    try{
+        for (int i = 0; i <= 2; i++){
+            if (strcmp(seachForms[i], formName.c_str()) == 0){
+                return (form[i](targetName));
+            }
         }
+        throw FormErrorException();
     }
-    throw FormErrorException();
+    catch (const std::exception& e){
+        std::cout << e.what() << std::endl;
+    }
+    return (NULL);
 }

@@ -6,7 +6,9 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& cop
 
 void PresidentialPardonForm::execute(Bureaucrat const& executor) const{
     if (this->getSigned() == 1 && executor.getGrade() > this->getRequiredExecGrade())
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
+    else if (this->getSigned() == 0)
+        throw UnsignedForm();
     std::cout << this->getName() << " was pardoned by Zaphod Beeblebrox." << std::endl;
     std::cout << executor.getName() << " exec " << this->getName() << std::endl << std::endl;
 }

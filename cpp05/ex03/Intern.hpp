@@ -2,6 +2,7 @@
 
 # include <iostream>
 # include <cstring>
+# include <stdio.h>
 # include "AForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 # include "RobotomyRequestForm.hpp"

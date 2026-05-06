@@ -43,4 +43,8 @@ const char* AForm::GradeTooLowException::what() const throw(){
     return ("Grade too Low!");
 }
 
+const char* AForm::UnsignedForm::what() const throw(){
+    return ("Unsigned form!");
+}
+
 AForm::~AForm(){}

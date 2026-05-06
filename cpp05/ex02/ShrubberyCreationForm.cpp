@@ -23,6 +23,8 @@ char* join_strings(const char* s1, const char* s2)
 void ShrubberyCreationForm::execute(Bureaucrat const& executor) const{
     if (this->getSigned() == 1 && executor.getGrade() > this->getRequiredExecGrade())
         throw AForm::GradeTooLowException();
+    else if (this->getSigned() == 0)
+        throw UnsignedForm();
     char* temp = join_strings(this->getName().c_str(), "_shrubbery");
     std::ofstream   file_shrubbery(temp);
     std::string     asciiTree = 

@@ -33,6 +33,11 @@ class AForm{
                 virtual const char* what() const throw();
         };
 
+        class UnsignedForm : public std::exception{
+            public:
+                virtual const char* what() const throw();
+        };
+
         virtual ~AForm();
 };
 std::ostream& operator<<(std::ostream& os, AForm& obj);

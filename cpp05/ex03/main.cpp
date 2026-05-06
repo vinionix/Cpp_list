@@ -5,7 +5,16 @@ int main( void ){
 	{
 		Intern someRandomIntern;
 		AForm* rrf;
-		rrf = someRandomIntern.makeForm("RobotomyRequestForm", "Bender");
-		delete [] rrf;
+		Bureaucrat Vini("Vini", 1);
+		rrf = someRandomIntern.makeForm("ShrubberyCreationForm", "Bender");
+		try{
+			Vini.signForm(*rrf);
+			Vini.executeForm(*rrf);
+			delete rrf;
+		}
+		catch (std::exception& e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 }

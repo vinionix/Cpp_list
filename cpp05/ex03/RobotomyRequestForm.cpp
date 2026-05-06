@@ -6,7 +6,9 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AFor
 
 void RobotomyRequestForm::execute(Bureaucrat const& executor) const{
     if (this->getSigned() == 1 && executor.getGrade() > this->getRequiredExecGrade())
-        throw AForm::GradeTooLowException();
+        throw GradeTooLowException();
+    else if (this->getSigned() == 0)
+        throw UnsignedForm();
     std::cout << "Vrrrrrr" << std::endl;
     std::cout << "Vrrrrrr" << std::endl;
     std::cout << "Vrrrrrr" << std::endl;
