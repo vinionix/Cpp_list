@@ -3,6 +3,8 @@
 # include <iostream>
 # include <stdlib.h>
 # include <cstring>
+# include "ConvertInt.hpp"
+# include "ConvertFloat.hpp"
 
 class ScaleConverter{
     private:
