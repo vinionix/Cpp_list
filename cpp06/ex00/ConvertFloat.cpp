@@ -5,7 +5,6 @@ ConvertFloat::ConvertFloat(){}
 ConvertFloat::~ConvertFloat(){}
 
 bool ConvertFloat::isFloatError( void ){
-    std::cout << "Float: Impossible" << std::endl;
     return (false);
 }
 bool verifyLetters(char* str){
@@ -19,20 +18,6 @@ bool verifyLetters(char* str){
             return (false);
         i++;
     } 
-    return (true);
-}
-
-bool verifyPoint(char* str){
-    int countP = 0;
-    int i = 0;
-
-    while (str[i] != '\0'){
-        if (str[i] == '.')
-            countP++;
-        if (countP > 1 || (str[i] == '.' && (str[i + 1] < '0' || str[i + 1] > '9')))
-            return (false);
-        i++;
-    }
     return (true);
 }
 

@@ -44,7 +44,11 @@ void ScaleConverter::convert(char* str){
         std::cout << "Int: " << converted << std::endl;
     }
     if (ConvertFloat::isFloat(str)){
-        int converted = std::atof(str);
+        float converted = std::atof(str);
         std::cout << "Float: " << converted << std::endl;
+    }
+    if (ConvertDouble::isDouble(str)){
+        double converted = std::atof(str);
+        std::cout << "Double: " << converted << std::endl;
     }
 }

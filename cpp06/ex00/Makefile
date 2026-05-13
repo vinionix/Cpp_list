@@ -1,5 +1,5 @@
 NAME_PROG = Converter
-NAME_FILE = main.cpp ScaleConverter.cpp ConvertInt.cpp ConvertFloat.cpp convertUtils.cpp
+NAME_FILE = main.cpp ScaleConverter.cpp ConvertInt.cpp ConvertFloat.cpp ConvertDouble.cpp convertUtils.cpp
 NAME_OBJS = $(NAME_FILE:.cpp=.o)
 COMP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic

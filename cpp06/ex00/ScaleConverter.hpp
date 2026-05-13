@@ -5,6 +5,7 @@
 # include <cstring>
 # include "ConvertInt.hpp"
 # include "ConvertFloat.hpp"
+# include "ConvertDouble.hpp"
 
 class ScaleConverter{
     private:
