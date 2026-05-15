@@ -1,6 +1,7 @@
 #pragma once
 # include "convertUtils.hpp"
 # include <iostream>
+# include <limits>
 
 class ConvertFloat{
 
@@ -10,4 +11,5 @@ class ConvertFloat{
     public:
         static bool isFloatError( void );
         static bool isFloat(char* str);
+        static void printConvertedFloat(double converted);
 };

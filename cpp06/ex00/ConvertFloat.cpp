@@ -43,3 +43,10 @@ bool ConvertFloat::isFloat(char* str){
     }
     return (true);
 }
+
+void ConvertFloat::printConvertedFloat(double converted){
+    if (converted > std::numeric_limits<float>::max() || converted < -std::numeric_limits<float>::max())
+        std::cout << "Float: Impossible" << std::endl;
+    else
+        std::cout << "Float: " << static_cast<float>(converted) << "f" << std::endl;
+}

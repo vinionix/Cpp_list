@@ -1,6 +1,7 @@
 #pragma once
 # include "convertUtils.hpp"
 # include <iostream>
+# include <limits>
 
 class ConvertInt{
 
@@ -10,4 +11,5 @@ class ConvertInt{
     public:
         static bool isIntError( void );
         static bool isInt(char* str);
+        static void printConvetedInt(double converted);
 };

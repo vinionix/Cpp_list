@@ -24,3 +24,10 @@ bool ConvertDouble::isDouble(char* str){
         return (isDoubleError());
     return (true);
 }
+
+void ConvertDouble::printConvertedDouble(double converted){
+    if (converted > std::numeric_limits<double>::max() || converted < -std::numeric_limits<double>::max())
+        std::cout << "Double: Impossible" << std::endl;
+    else
+        std::cout << "Double: " << converted << std::endl;
+}

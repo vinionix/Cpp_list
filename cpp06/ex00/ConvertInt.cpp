@@ -22,3 +22,10 @@ bool ConvertInt::isInt(char* str){
     }
     return (true);
 }
+
+void ConvertInt::printConvetedInt(double converted){
+    if (converted > std::numeric_limits<int>::max() || converted < std::numeric_limits<int>::min())
+        std::cout << "Int: Impossible" << std::endl;
+    else
+        std::cout << "Int: "<< static_cast<int>(converted) << std::endl;
+}
