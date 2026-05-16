@@ -8,6 +8,7 @@
 # include "ConvertDouble.hpp"
 # include "ConvertChar.hpp"
 # include <iomanip>
+# include <cstdlib>
 # define NEG_INFF 0 
 # define POS_INFF 1     
 # define NANF 2

@@ -33,8 +33,11 @@ static bool specialCasesConvert(char* str){
 }
 
 static void printConveted(char* str){
-    double converted = atof(str);
-
+    double converted = 0.0;
+    if (strlen(str) == 1 && (str[0] < '0' || str[0] > '9'))
+        converted = static_cast<double>(str[0]);
+    else
+        converted = atof(str);
     std::cout << std::fixed << std::setprecision(1);
     ConvertChar::printConvertChar(converted);
     ConvertInt::printConvetedInt(converted);
