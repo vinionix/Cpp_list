@@ -1,5 +1,4 @@
-#ifndef ARRAY_HPP
-#define ARRAY_HPP
+#pragma once
 
 #include <iostream>
 
@@ -19,4 +18,3 @@ class Array {
 };
 
 # include "Array.tpp"
-#endif
