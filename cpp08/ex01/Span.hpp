@@ -2,12 +2,14 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <vector>
+# include <algorithm>
 
 class Span{
     private:
         unsigned int N;
         unsigned int currentSize;
-        int* array;
+        std::vector<int> array;
     public:
         Span(unsigned int n);
         Span(const Span& copy);
@@ -20,5 +22,5 @@ class Span{
         int shortestSpan();
         int longestSpan();
         void organizeArray(Span* span);
-        void addMultipleNumbers(int* begin, int* end);
+        void addMultipleNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
 };

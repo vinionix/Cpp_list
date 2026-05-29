@@ -4,17 +4,14 @@ Span::Span(unsigned int n) : N(n), currentSize(0){
     if (this->N == 0){
         throw std::runtime_error("Span cannot have a size of 0");
     }
-    this->array = new int[this->N];
+    this->array = std::vector<int>();
 }
 
 Span::Span(const Span& copy){
     if (this != &copy){
         this->N = copy.N;
         this->currentSize = copy.currentSize;
-        this->array = new int[this->N];
-        for (unsigned int i = 0; i < this->N; i++){
-            this->array[i] = copy.array[i];
-        }
+        this->array = std::vector<int>(copy.array);
     }
 }
 
@@ -22,12 +19,8 @@ Span& Span::operator=(const Span& copy){
     if (this != &copy){
         this->N = copy.N;
         this->currentSize = copy.currentSize;
-        delete[] this->array;
-        this->array = new int[this->N];
-        for (unsigned int i = 0; i < this->N; i++){
-            this->array[i] = copy.array[i];
-        }
-    }
+        this->array.clear();
+        this->array = std::vector<int>(copy.array);}
     return *this;
 }
 
@@ -35,19 +28,8 @@ void Span::addNumber(int number){
     if (this->currentSize >= this->N){
         throw std::runtime_error("Span does not have enough space to add more numbers");
     }
-    this->array[this->currentSize] = number;
+    this->array.push_back(number);
     this->currentSize++;
-}
-
-void Span::organizeArray(Span* span){
-    for (unsigned int i = 0; i < span -> currentSize - 1; i++){
-        if (span->array[i] > span->array[i + 1]){
-            int temp = span->array[i];
-            span->array[i] = span->array[i + 1];
-            span->array[i + 1] = temp;
-            i = -1;
-        }
-    }
 }
 
 int Span::shortestSpan(){
@@ -55,7 +37,7 @@ int Span::shortestSpan(){
         throw std::runtime_error("Span does not have enough numbers to find a span");
     }
     int minSpan = 2147483647;
-    this->organizeArray(this);
+    std::stable_sort(this->array.begin(), this->array.end());
     for (unsigned int i = 0; i < this->currentSize - 1; i++){
         for (unsigned int j = i + 1; j < this->currentSize; j++){
             if ((this->array[j] - this->array[i]) < minSpan){
@@ -71,7 +53,7 @@ int Span::longestSpan(){
         throw std::runtime_error("Span does not have enough numbers to find a span");
     }
     int maxSpan = -2147483648;
-    this->organizeArray(this);
+    std::stable_sort(this->array.begin(), this->array.end());
     for (unsigned int i = 0; i < this->currentSize - 1; i++){
         for (unsigned int j = i + 1; j < this->currentSize; j++){
             if ((this->array[j] - this->array[i]) > maxSpan){
@@ -82,7 +64,7 @@ int Span::longestSpan(){
     return maxSpan;
 }
 
-void Span::addMultipleNumbers(int* begin, int* end){
+void Span::addMultipleNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end){
     while (begin != end){
         if (this->currentSize >= this->N){
             throw std::runtime_error("Span does not have enough space to add more numbers");
@@ -109,6 +91,4 @@ void Span::printSpan(Span* span){
     std::cout << std::endl;
 }
 
-Span::~Span(){
-    delete[] this->array;
-}
+Span::~Span(){}

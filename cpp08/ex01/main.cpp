@@ -4,12 +4,12 @@ int main()
 {
     Span sp = Span(10000);
 
-    int arr[10000];
+    std::vector<int> arr(10000);
     for (int i = 0; i < 10000; i++){
         arr[i] = std::rand();
     } 
     try{
-        sp.addMultipleNumbers(&arr[0], &arr[10000]);
+        sp.addMultipleNumbers(arr.begin(), arr.end());
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;
