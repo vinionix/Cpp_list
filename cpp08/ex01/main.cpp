@@ -2,17 +2,14 @@
 
 int main()
 {
-    Span sp = Span(5);
-    try{
+    Span sp = Span(10000);
 
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(1);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
-        sp.addNumber(12);
-        sp.addMultipleNumbers(&sp.array[0], &sp.array[5]);
+    int arr[10000];
+    for (int i = 0; i < 10000; i++){
+        arr[i] = std::rand();
+    } 
+    try{
+        sp.addMultipleNumbers(&arr[0], &arr[10000]);
     }
     catch (std::exception& e){
         std::cout << e.what() << std::endl;

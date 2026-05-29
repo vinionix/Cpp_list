@@ -1,6 +1,7 @@
 #pragma once
 
 # include <iostream>
+# include <cstdlib>
 
 class Span{
     private:
@@ -11,7 +12,7 @@ class Span{
         Span(unsigned int n);
         Span(const Span& copy);
         Span& operator=(const Span& copy);
-        const Span& getArray( const int pos ) const;
+        void printSpan(Span* span);
         unsigned int getN( void );
         unsigned int getCurrentSize( void );
         ~Span();

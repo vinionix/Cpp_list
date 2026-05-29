@@ -45,6 +45,7 @@ void Span::organizeArray(Span* span){
             int temp = span->array[i];
             span->array[i] = span->array[i + 1];
             span->array[i + 1] = temp;
+            i = -1;
         }
     }
 }
@@ -82,15 +83,13 @@ int Span::longestSpan(){
 }
 
 void Span::addMultipleNumbers(int* begin, int* end){
-    while (begin != end && this->currentSize < this->N){
+    while (begin != end){
+        if (this->currentSize >= this->N){
+            throw std::runtime_error("Span does not have enough space to add more numbers");
+        }
         this->addNumber(*begin);
-        this->currentSize++;
         begin++;
     }
-}
-
-Span* Span::getArray( const int pos ) const{
-    return this->array[pos];
 }
 
 unsigned int Span::getN( void ){
@@ -101,11 +100,11 @@ unsigned int Span::getCurrentSize( void ){
     return this->currentSize;
 }
 
-void printSpan(Span* span){
+void Span::printSpan(Span* span){
     for (unsigned int i = 0; i < span->getCurrentSize(); i++){
         Span temp(*span);
 
-        std::cout << temp.getArray(i) << " ";
+        std::cout << temp.array[i] << " ";
     }
     std::cout << std::endl;
 }
