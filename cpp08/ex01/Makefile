@@ -1,5 +1,5 @@
 NAME_PROG = Span
-NAME_FILE = main.cpp
+NAME_FILE = main.cpp Span.cpp
 NAME_OBJS = $(NAME_FILE:.cpp=.o)
 COMP = c++
 FLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
