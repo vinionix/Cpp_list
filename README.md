@@ -1,23 +1,54 @@
 # C++ Modules — 42 Rio
 
-Repositório de estudos e implementações dos módulos de C++ da formação da [42 Rio](https://42.rio/). Os exercícios percorrem os fundamentos da linguagem, orientação a objetos, templates, containers da STL e algoritmos, sempre com compilação em **C++98**.
+Repositório de estudos e implementações dos módulos de C++ da formação da 42 Rio, cobrindo do `cpp00` ao `cpp09`.
 
-O repositório reúne os módulos `cpp00` a `cpp09`. Cada exercício é independente, possui seu próprio `Makefile` e inclui um programa de demonstração ou teste manual em `main.cpp` — com exceção do primeiro exercício, implementado diretamente em `Megaphone.cpp`.
+A coleção mostra uma progressão completa pelos fundamentos de C++98: sintaxe e classes, gerenciamento de memória, forma canônica ortodoxa, herança, polimorfismo, exceções, casts, templates, STL e algoritmos.
 
 ## Objetivo
 
-Praticar C++ de forma progressiva, partindo da sintaxe básica e chegando ao uso de templates, containers e algoritmos da biblioteca padrão. As implementações também exercitam gerenciamento de memória, cópia de objetos, polimorfismo, tratamento de exceções e organização de classes.
+Usar exercícios pequenos e independentes para construir uma base sólida em C++ e entender não apenas a sintaxe, mas as decisões de projeto por trás de objetos, ownership de recursos, abstrações e estruturas de dados.
+
+## Progressão técnica
+
+```text
+cpp00  classes, streams, encapsulamento
+  ↓
+cpp01  memória, ponteiros, referências
+  ↓
+cpp02  forma canônica, operadores
+  ↓
+cpp03  herança
+  ↓
+cpp04  polimorfismo e abstrações
+  ↓
+cpp05  exceções e fábricas
+  ↓
+cpp06  casts e serialização
+  ↓
+cpp07  templates
+  ↓
+cpp08  containers, iteradores, algoritmos
+  ↓
+cpp09  processamento de dados e algoritmos
+```
 
 ## Tecnologias e conceitos
 
 - C++98
 - Make
-- orientação a objetos e forma canônica ortodoxa
+- orientação a objetos
+- forma canônica ortodoxa
 - alocação dinâmica e gerenciamento de recursos
-- herança, classes abstratas e polimorfismo
-- exceções, conversões e serialização
+- deep copy e ownership
+- herança e polimorfismo
+- classes abstratas e interfaces
+- exceções
+- casts e serialização
 - templates de funções e classes
-- STL: iteradores, algoritmos e containers
+- STL
+- iteradores
+- containers
+- algoritmos
 
 ## Organização dos módulos
 
@@ -25,67 +56,84 @@ Praticar C++ de forma progressiva, partindo da sintaxe básica e chegando ao uso
 | --- | ---: | --- |
 | [`cpp00`](cpp00/) | 2 | sintaxe inicial, streams, classes e encapsulamento |
 | [`cpp01`](cpp01/) | 6 | memória, ponteiros, referências, composição e ponteiros para métodos |
-| [`cpp02`](cpp02/) | 3 | forma canônica ortodoxa, sobrecarga de operadores e números de ponto fixo |
-| [`cpp03`](cpp03/) | 3 | herança e especialização de classes |
+| [`cpp02`](cpp02/) | 3 | forma canônica ortodoxa, operadores e ponto fixo |
+| [`cpp03`](cpp03/) | 3 | herança e especialização |
 | [`cpp04`](cpp04/) | 3 | polimorfismo, cópia profunda, classes abstratas e interfaces |
-| [`cpp05`](cpp05/) | 4 | exceções, classes abstratas e criação de objetos por fábrica |
-| [`cpp06`](cpp06/) | 3 | conversões de tipos, serialização e identificação dinâmica de tipos |
-| [`cpp07`](cpp07/) | 3 | templates de funções e classes |
+| [`cpp05`](cpp05/) | 4 | exceções, abstrações e fábrica de objetos |
+| [`cpp06`](cpp06/) | 3 | conversões de tipos, serialização e identificação dinâmica |
+| [`cpp07`](cpp07/) | 3 | templates |
 | [`cpp08`](cpp08/) | 3 | containers, iteradores e algoritmos da STL |
-| [`cpp09`](cpp09/) | 3 | processamento de dados, RPN e merge-insert sort com containers da STL |
+| [`cpp09`](cpp09/) | 3 | processamento de dados, RPN e merge-insert sort |
 
-O [`cpp09/README.md`](cpp09/README.md) detalha a arquitetura, as regras de validação e os testes manuais do módulo final.
+O [`cpp09/README.md`](cpp09/README.md) contém documentação adicional do módulo final.
 
-## Como compilar e executar
+## Como compilar
 
-### Pré-requisitos
+Não existe build único na raiz. Cada exercício possui seu próprio `Makefile`.
 
-- compilador C++ com suporte a C++98 (`c++` ou `g++`)
-- `make`
-- ambiente compatível com comandos POSIX para os exemplos de terminal
+Exemplo:
 
-Não existe um alvo de compilação único na raiz. Entre no diretório do exercício desejado e execute o `Makefile` local:
-
-```sh
+```bash
 cd cpp00/ex00
 make
 ./megaphone "hello world"
 ```
 
-Os alvos disponíveis nos exercícios são:
+Alvos comuns:
 
-```sh
-make       # compila o programa
-make clean # remove os arquivos objeto
+```bash
+make
+make clean
 make fclean
-make re    # recompila do zero
+make re
 ```
 
-O nome do executável varia por exercício e está definido na variável `NAME` ou `NAME_PROG` de cada `Makefile`. Os arquivos `main.cpp` mostram os cenários usados para exercitar as implementações. O módulo 09 também documenta comandos de teste específicos.
+O nome do executável varia conforme o exercício e pode ser conferido no `Makefile` local.
 
-## Status atual
+## Como revisar este repositório
 
-Os dez módulos, do `cpp00` ao `cpp09`, estão presentes no repositório, totalizando **33 exercícios com `Makefile` próprio**. Em uma compilação local do conjunto, 32 exercícios foram compilados; o `cpp06/ex02` atualmente falha porque captura `std::exception` por valor, comportamento tratado como erro pelas flags do projeto. O histórico registra a progressão até o módulo 09, mas o repositório não informa resultados de avaliações da 42 e não possui uma suíte automatizada de testes na raiz.
+Para entender a evolução sem abrir todos os 33 exercícios, uma boa sequência é:
 
-## Evolução do projeto
+1. observar encapsulamento e classes no `cpp00`;
+2. comparar ponteiros/referências e ownership no `cpp01`;
+3. analisar copy constructor/assignment no `cpp02`;
+4. acompanhar herança e polimorfismo nos módulos 03/04;
+5. verificar tratamento de exceções no 05;
+6. revisar casts no 06;
+7. observar a mudança para abstrações genéricas no 07;
+8. comparar escolhas de containers no 08/09.
 
-A linha do tempo abaixo usa apenas marcos identificáveis no histórico do repositório:
+## Status
 
-- **Outubro de 2025:** conclusão registrada do `cpp00`.
-- **Novembro de 2025 a janeiro de 2026:** inclusão do `cpp01` e avanço pelos módulos `cpp02` e `cpp03`.
-- **Fevereiro a maio de 2026:** implementação dos módulos `cpp04` a `cpp08`.
-- **Junho de 2026:** inclusão e documentação do `cpp09`.
-- **Estado atual:** coleção organizada do `cpp00` ao `cpp09`; manutenção concentrada em documentação e validação manual dos exercícios.
+Os dez módulos, do `cpp00` ao `cpp09`, estão presentes no repositório, totalizando **33 exercícios com `Makefile` próprio**.
 
-## Aprendizados principais
+Em uma validação local registrada anteriormente, 32 exercícios compilaram e `cpp06/ex02` apresentou falha relacionada à captura de `std::exception` por valor sob as flags do projeto. Essa observação é mantida para não confundir “arquivo presente” com “build validado”.
 
-- estruturar classes com responsabilidades bem definidas e estado encapsulado;
-- compreender cópia, atribuição, destruição e propriedade de recursos;
-- aplicar herança e polimorfismo sem perder controle sobre o ciclo de vida dos objetos;
-- usar exceções e conversões de tipos de forma explícita;
-- escrever abstrações genéricas com templates;
-- escolher e aplicar containers e algoritmos da STL conforme o problema.
+O repositório não afirma resultados de avaliações da 42 nem uma suíte automatizada global.
+
+## Evolução registrada
+
+- **Outubro de 2025:** `cpp00`.
+- **Novembro de 2025 a janeiro de 2026:** `cpp01`, `cpp02` e `cpp03`.
+- **Fevereiro a maio de 2026:** `cpp04` a `cpp08`.
+- **Junho de 2026:** `cpp09`.
+- **Estado atual:** coleção completa do `cpp00` ao `cpp09`, com foco em organização, revisão e documentação.
+
+## O que este projeto demonstra
+
+- evolução consistente em C++;
+- modelagem orientada a objetos;
+- entendimento de ownership e ciclo de vida;
+- herança e polimorfismo;
+- tratamento de erros com exceções;
+- templates e programação genérica;
+- seleção de containers e algoritmos;
+- capacidade de trabalhar sob restrições de padrão C++98.
+
+## Documentação
+
+- [Technical Overview](docs/TECHNICAL_OVERVIEW.md) — visão da progressão, temas de design, estratégia de validação e valor técnico da coleção.
 
 ## Autor
 
-Desenvolvido por [vinionix](https://github.com/vinionix) durante a formação na 42 Rio.
+Desenvolvido por [Vinícius Fidelis](https://github.com/vinionix) durante a formação na 42 Rio.
